@@ -4,8 +4,8 @@ import type { OperationType, GraphQLTaggedNode } from "relay-runtime";
 import vikeReact from "vike-react/config";
 
 export default {
-  title: "The Pokemon App",
   extends: vikeReact,
+  title: "The Pokemon App",
   meta: {
     relay: { env: { server: true, client: true } },
     clientData: { env: { server: false, client: true } },
@@ -16,6 +16,7 @@ export default {
 export interface RelayConfig<Query extends OperationType = OperationType> {
   query: GraphQLTaggedNode;
   variables: (params: Record<string, string>) => Query["variables"];
+  title?: string | ((data: Query["response"]) => string);
 }
 
 declare global {

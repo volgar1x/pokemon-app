@@ -18,6 +18,9 @@ export function Layout({ children }: React.PropsWithChildren) {
               <li>
                 <Link href="/pokemon/4">Charmander</Link>
               </li>
+              <li>
+                <Link href="/pokemon/151">Mew</Link>
+              </li>
             </ol>
           </li>
         </ul>

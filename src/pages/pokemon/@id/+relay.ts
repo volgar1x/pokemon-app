@@ -16,4 +16,9 @@ export const relay: RelayConfig<RelayPokemonQuery> = {
   variables: (params) => ({
     number: parseInt(params.id, 10),
   }),
+  title: ({ getPokemonByDexNumber: { species } }) => `Pokemon: ${capitalize(species)}`,
 };
+
+function capitalize(s: string): string {
+  return s[0].toUpperCase() + s.substring(1);
+}

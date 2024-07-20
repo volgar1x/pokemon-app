@@ -1,15 +1,11 @@
 import { useRelayData } from "../../useRelayData";
 import { RelayPokemonQuery } from "./__generated__/RelayPokemonQuery.graphql";
-import { PokemonDisplay } from "../../../components/PokemonDisplay";
 
-export function Page() {
+export function Head() {
   const { getPokemonByDexNumber: pokemon } = useRelayData<RelayPokemonQuery>();
-
   return (
     <>
-      <h1>Pokemon #{pokemon.num}</h1>
-      <PokemonDisplay pokemon={pokemon} />
+      <meta name="description" content={pokemon.species} />
     </>
   );
 }
-
