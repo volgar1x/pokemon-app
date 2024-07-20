@@ -11,16 +11,22 @@
   "keywords": [],
   "author": "",
   "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/react-relay": "^16.0.6",
+    "@types/relay-runtime": "^17.0.1",
+    "relay-compiler": "^17.0.0",
     "typescript": "^5.5.3",
     "vite": "^5.3.3",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0"
+    "vite-plugin-relay": "^2.1.0"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.1",
     "cross-fetch": "^4.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-relay": "^17.0.0",
+    "relay-runtime": "^17.0.0",
     "vike": "^0.4.179",
     "vike-react": "^0.4.17"
   },
