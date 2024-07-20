@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Link } from "../components/Link";
 
 export function Layout({ children }: React.PropsWithChildren) {
@@ -22,7 +23,11 @@ export function Layout({ children }: React.PropsWithChildren) {
         </ul>
       </nav>
 
-      <main style={{ flex: 1 }}>{children}</main>
+      <main style={{ flex: 1 }}>
+        <Suspense fallback={<p>Loading...</p>}>
+          {children}
+        </Suspense>
+      </main>
     </div>
   );
 }

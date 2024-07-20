@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useRelayData } from "../../useRelayData";
 import { RelayPokemonQuery } from "./__generated__/RelayPokemonQuery.graphql";
+import { PokemonDisplay } from "../../../components/PokemonDisplay";
 
 export function Page() {
   const { getPokemonByDexNumber: pokemon } = useRelayData<RelayPokemonQuery>();
@@ -11,16 +12,7 @@ export function Page() {
   return (
     <>
       <h1>Pokemon #{pokemon.num}</h1>
-      <p>
-        Pokemon{" "}
-        <span style={{ textTransform: "capitalize" }}>{pokemon.species}</span>{" "}
-        has types:
-        <ul>
-          {pokemon.types.map((type, index) => (
-            <li key={index}>{type.name}</li>
-          ))}
-        </ul>
-      </p>
+      <PokemonDisplay pokemon={pokemon} />
     </>
   );
 }

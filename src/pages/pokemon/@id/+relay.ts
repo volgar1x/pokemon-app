@@ -9,9 +9,7 @@ export const relay: RelayConfig<RelayPokemonQuery> = {
       getPokemonByDexNumber(number: $number) {
         num
         species
-        types {
-          name
-        }
+        ...PokemonDisplayFragment
       }
     }
   `,
